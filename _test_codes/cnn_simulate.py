@@ -1,8 +1,13 @@
+#코드 작성일 : 20210312
+#코드 작성자 : 김두환
+#목적 : 컨볼루션과 맥스풀링을 numpy로 직접 구현하여 원리를 정확히 이해하고자 함
+
 from cv2 import cv2
 import numpy as np
 
-# src = cv2.imread("lenna.png", cv2.IMREAD_COLOR)
-src = cv2.imread("lenna.png", cv2.IMREAD_GRAYSCALE)
+src = cv2.imread("./images/lenna.bmp", cv2.IMREAD_COLOR)
+# src = cv2.imread("./images/lenna.bmp", cv2.IMREAD_GRAYSCALE)
+print("처리중...")
 channels = cv2.split(src)
 
 def convolution(src, filter_arr, add_val=0):
@@ -80,10 +85,11 @@ for idx, c in enumerate(channels):
     dst = convolution(c, filter_arr, add_val=0)
     print("dst_{}_size : {}".format(bgr_list[idx], dst.shape))
     cv2.imshow("dst_{}".format(bgr_list[idx]), dst)
+
     #step2 : Max Pooling
-    dst = maxPooling(dst, pooling_kernel_size=32)
     # dst = maxPooling(dst, pooling_kernel_size=2)
-    # dst = maxPooling(dst, pooling_kernel_size=2)
+    # dst = maxPooling(dst, pooling_kernel_size=4)
+    dst = maxPooling(dst, pooling_kernel_size=8)
     print("dst_{}_max_pooling_size : {}".format(bgr_list[idx], dst.shape))
     cv2.namedWindow("dst_{}_max_pooling".format(bgr_list[idx]), cv2.WINDOW_KEEPRATIO)
     cv2.imshow("dst_{}_max_pooling".format(bgr_list[idx]), dst)
