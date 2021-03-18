@@ -16,3 +16,9 @@ M2. 이미지 프로세싱/.ipynb_checkpoints/M2_23-1_모폴로지_침식과 팽
 M2. 이미지 프로세싱/.ipynb_checkpoints/M2_24_모폴로지_열기와 닫기-checkpoint.ipynb
 M2. 이미지 프로세싱/.ipynb_checkpoints/M2_23_모폴로지_침식과 팽창-checkpoint.ipynb
 M2. 이미지 프로세싱/.ipynb_checkpoints/M2_20_이진화-checkpoint.ipynb
+.DS_Store
+.vscode/launch.json
+.vscode/settings.json
+.vscode/tasks.json
+_test_codes/.ipynb_checkpoints/make_dnn_image-checkpoint.ipynb
+_test_codes/make_dnn_image.ipynb
